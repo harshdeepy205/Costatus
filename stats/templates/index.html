@@ -1,0 +1,193 @@
+{% load imp %}
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>home</title>
+        <link  href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+        <link href="{% static 'style.css' %}" rel="stylesheet"/>
+    </head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-sm-2">
+                <div class="range-title">
+                    <h4>Symptons</h4>
+                    <div class="range-list">
+                        <a href="#">
+                            <img src="{% static '/images/1.png'%}">
+                        </a>
+
+                        <a href="#">
+                            <img src="{% static '/images/2.png' %}">
+                        </a>
+
+                        <a href="#">
+                            <img src="{% static '/images/3.png'%}">
+                        </a>
+
+                        <a href="#">
+                            <img src="{% static '/images/4.png'%}">
+                        </a>
+
+                        <a href="#">
+                            <img src={% static '/images/5.png'%}">
+                        </a>
+
+                    </div>
+                </div>
+            </aside>
+
+
+
+            <section class="col-sm-8">
+                <div class="data-table table-responsive">
+                    <table border="1" cellpadding="1" cellspacing="1" class="table table-striped" style="font-weight:bold">
+                     <thead>
+                      <tr>
+                       <th>
+                        <strong>
+                         S. No.
+                        </strong>
+                       </th>
+                       <th>
+                        <strong>
+                         Name of State / UT
+                        </strong>
+                       </th>
+                       <th>
+                        <strong>
+                         Total Confirmed cases (Including 76 foreign Nationals)
+                        </strong>
+                       </th>
+                       <th>
+                        <strong>
+                         Cured/Discharged/
+                         <br/>
+                         Migrated
+                        </strong>
+                       </th>
+                       <th>
+                        <strong>
+                         Death
+                        </strong>
+                       </th>
+                      </tr>
+                     </thead>
+                     <tbody>
+
+                     {% for i in s_no %}
+
+                          <tr>
+                       <td>
+                        {{ i }}
+                       </td>
+
+                       <td>
+                        {{ States_UT|value:i }}
+                       </td>
+                       <td>
+                        {{ Confirmed|value:i }}
+                       </td>
+                       <td>
+                        {{ Recovered|value:i }}
+                       </td>
+                       <td>
+                        {{ Deceased|value:i }}
+                       </td>
+    </tr>
+                      {% endfor%}
+                       <td colspan="2">
+                        <strong>
+                         <span>
+                          Total number of confirmed cases in India
+                         </span>
+                        </strong>
+                       </td>
+                       <td align="center" style="text-align:center;">
+                        <strong>
+                         11933*
+                        </strong>
+                       </td>
+                       <td>
+                        <strong>
+                         1344
+                        </strong>
+                       </td>
+                       <td>
+                        <strong>
+                         392
+                        </strong>
+                       </td>
+                      </tr>
+                      <tr>
+                       <td colspan="5">
+                        <strong>
+                         *States wise distribution is subject to further verification and reconciliation
+                        </strong>
+                       </td>
+                      </tr>
+                      <tr>
+                       <td align="center" colspan="5" style="text-align:center;">
+                        <strong>
+                         #Nagaland Patient shifted to Assam
+                        </strong>
+                       </td>
+                      </tr>
+                     </tbody>
+                    </table>
+                   </div>
+                       
+                
+            </section>
+
+            <aside class="col-sm-2" style="padding-right: 10%;">
+                <div class="container-fluid">
+                    <div class="row">
+
+                            <div class="range-title">
+                                <h4>Status</h4>
+                                <div class="range-list1">
+                                    <a href="#">
+                                        <img class="img-responsive" src="{% static '/images/col3/1.png' %}">
+                                        <h4>{{ total_active }}</h4>
+                                        <h4>Active Cases</h4>
+                                    </a>
+                                </br>
+                                    <a href="#">
+                                        <img class="img-responsive" src="{% static '/images/col3/2.png' %}">
+                                        <h4>{{ recovered }}</h4>
+                                        <h4>Cures/Discharge</h4>
+                                    </a>
+                                </br>
+                                    <a href="#">
+                                        <img class="img-responsive" src="{% static '/images/col3/3.png' %}">
+                                        <h4>{{ deceased }}</h4>
+                                        <h4>Deaths</h4>
+                                    </a>
+                                </br>
+                                    <a href="#">
+                                        <img class="img-responsive" src="{% static '/images/col3/4.png' %}">
+                                        <h4>Number</h4>
+                                        <h4>Migrate</h4>
+                                    </a>
+                                </br>
+
+                                </div>
+                            </div>
+
+            </aside>
+        </div>
+    </div>
+
+
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+
+</body>
+</html>
